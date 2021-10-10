@@ -63,3 +63,14 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :sentry,
+  # Enter your DSN
+  dsn: "xxxxx",
+  environment_name: :dev,
+  enable_source_code_context: true,
+  root_source_code_path: File.cwd!(),
+  tags: %{
+    env: "development"
+  },
+  included_environments: [:dev]
